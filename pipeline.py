@@ -1,12 +1,13 @@
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import stopwords
 import pickle
 import re
 import numpy as np
 import pandas as pd
 
-lemmatizer = WordNetLemmatizer()
-sw = stopwords.words("english")
+import nltk
+nltk.download('stopwords', download_dir='nltk_data')
+
+with open('nltk_data/corpora/stopwords/english', 'r') as file:
+    sw = file.read().splitlines()
 
 with open('static/model/model_pkl', 'rb') as f:
     model = pickle.load(f)
@@ -24,8 +25,6 @@ def preprocessing(text):
     data[0] = data[0].str.replace('\d', '')
     data[0] = data[0].apply(lambda x: " ".join(
         x for x in x.split() if x not in sw))
-    data[0] = data[0].apply(lambda x: " ".join(
-        [lemmatizer.lemmatize(word) for word in x.split()]))
     data = data[0]
     return data
 
