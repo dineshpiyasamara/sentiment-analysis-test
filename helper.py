@@ -15,7 +15,6 @@ with open('static/model/model_pkl', 'rb') as f:
 vocab = pd.read_csv('static/model/vocabulary.txt', header=None)
 tokens = vocab[0].tolist()
 
-
 def preprocessing(text):
     data = pd.DataFrame([text])
     data[0] = data[0].apply(lambda x: " ".join(x.lower() for x in x.split()))
