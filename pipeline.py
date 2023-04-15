@@ -1,16 +1,9 @@
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
 import pickle
 import re
 import numpy as np
 import pandas as pd
-import warnings
-import nltk
-
-nltk.download('stopwords')
-nltk.download('wordnet')
-
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-warnings.filterwarnings('ignore')
 
 lemmatizer = WordNetLemmatizer()
 sw = stopwords.words("english")
