@@ -17,6 +17,7 @@ build/
 .idea/
 docs/_build/
 .vscode
+nltk_data/
 
 # Coverage reports
 htmlcov/
