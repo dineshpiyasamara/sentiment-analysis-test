@@ -18,6 +18,7 @@ build/
 docs/_build/
 .vscode
 nltk_data/
+*.log
 
 # Coverage reports
 htmlcov/
